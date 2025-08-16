@@ -13,37 +13,74 @@ At least 1 public repository
 Follow ≥ 5 accounts & have ≥ 1 follower
 Allow tool to read/write GitHub Gists
 🛠 Step-by-Step Setup
-1️⃣ Update & Install Dependencies
+1️⃣ Update & Install Dependencies  
+
+
 apt update && apt upgrade -y
 apt install -y curl git build-essential
 
+
+
 2️⃣ Install Node.js v18 & npm v9.2
+
 
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 apt install -y nodejs
 npm install -g npm@9.2
+
+
 3️⃣ Check Versions
+
+
 node -v
 npm -v
+
+
 4️⃣ Create Temporary Directory
+
+
 mkdir ~/trusted-setup-tmp && cd ~/trusted-setup-tmp
 
+
 5️⃣ Install Phase2 CLI
+
+
 npm install -g @p0tion/phase2cli
+
+
 6️⃣ Verify CLI Installation
+
+
 phase2cli --version
+
+
 7️⃣ Authenticate with GitHub
+
+
 phase2cli auth
+
+
 Follow the browser link shown in the terminal
 Login to GitHub & authorize p0tion to access Gists
 Return to terminal
+
 8️⃣ Contribute to the Ceremony
+
+
 screen -S ceremony
 phase2cli contribute -c ethstorage-v1-trusted-setup-ceremony
+
+
 🧹 Cleanup After Contribution
+
+
 phase2cli clean
 phase2cli logout
 cd ~ && rm -rf ~/trusted-setup-tmp
+
+
 🖥 Screen Session Controls
+
+
 Detach: CTRL + A, then D
 Reattach: screen -r ceremony
